@@ -1,36 +1,42 @@
 class ProductsController < ApplicationController
-
   def index
     @products = Product.all
+    skip_policy_scope
   end
 
   def show
     @product = Product.find(params[:id])
+    authorize @product
   end
 
   def new
     @product = Product.new
+    authorize @product
   end
 
   def create
-   @product = Product.new(product_params)
+    @product = Product.new(product_params)
     if @product.save
-    redirect_to products_path(@products)
+      redirect_to products_path(@products)
+      authorize @product
     else
       render :new
     end
   end
 
-    def edit
+  def edit
     @product = Product.find(params[:id])
+    authorize @product
   end
 
   def update
     @product = Product.find(params[:id])
-    @product.update(params[:product])
+    if @product.update(params[:product])
     @product.save
+    else render :edit
     # Will raise ActiveModel::ForbiddenAttributesError
     redirect_to product_path(@product)
+    end
   end
 
   def destroy
