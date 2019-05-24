@@ -1,3 +1,16 @@
+<div> <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-dark">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+<% end %>
+
+</div>
+
+
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514899307441-bee613d8e6e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80;")>
   <div class="container">
     <h1> Welcome to Caravane Airlines </h1>
@@ -5,31 +18,38 @@
   </div>
 </div>
 
-  <div class="container">
+<div class="container">
 
-    <div class="row justify-content-center">
-      <h1 class="my-5 text-center new-title" > What is your next travel ? </h1>
-        <div class="col-md-4">
-        <ul>
+  <div class="justify-content-center">
 
-          <% @products.each do |product| %>
+    <h1 class="my-5 text-center new-title" > What is your next travel ? </h1>
 
-            <div class="cards">
-              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)" >
-            <%= cl_image_tag product.photo, height: 300, width: 400, crop: :fill %>
-           <%= link_to product_path(product) do %>
-              <%= "#{product.name}, #{product.description}, #{product.price}" %>
-            </div>
-              </div>
+
+          <div class="cards">
+
+
+
+            <% @products.each do |product| %>
+
+
+                  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)" >
+                    <%= cl_image_tag product.photo, height: 300, width: 400, crop: :fill %>
+
+                    <%= link_to product_path(product) do %>
+                    <%= "#{product.name}, #{product.description}, #{product.price}" %>
+                    <% end %>
+                  </div>
+
             <% end %>
-          <% end %>
-        </ul>
+
+          </div>
+
           <div class="my-5 add-button">
             <% if policy(Product).create? %>
               <%= link_to "Add an offer", new_product_path, class: "btn btn-dark btn-lg" %>
             <% end %>
           </div>
-        </div>
+
     </div>
   </div>
 
