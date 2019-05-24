@@ -1,20 +1,24 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
+    skip_policy_scope
   end
 
   def show
     @product = Product.find(params[:id])
+    authorize @product
   end
 
   def new
     @product = Product.new
+    authorize @product
   end
 
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to products_path(@products)
+      redirect_to products_path(@product)
+      authorize @product
     else
       render :new
     end
@@ -22,14 +26,17 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    authorize @product
   end
 
   def update
     @product = Product.find(params[:id])
-    @product.update(params[:product])
-    @product.save
-    # Will raise ActiveModel::ForbiddenAttributesError
-    redirect_to product_path(@product)
+    if @product.update(product_params)
+      @product.save
+      redirect_to product_path(@product)
+    else
+      render :edit
+    end
   end
 
   def destroy
