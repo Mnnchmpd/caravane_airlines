@@ -15,7 +15,7 @@
           <% @products.each do |product| %>
             <div class="cards">
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)" >
-            <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag product.photo, height: 300, width: 400, crop: :fill %>
            <%= link_to product_path(product) do %>
               <%= "#{product.name}, #{product.description}, #{product.price}" %>
             </div>
