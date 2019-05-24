@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to products_path(@products)
+      redirect_to products_path(@product)
       authorize @product
     else
       render :new
@@ -31,11 +31,11 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    if @product.update(params[:product])
-    @product.save
-    else render :edit
-    # Will raise ActiveModel::ForbiddenAttributesError
-    redirect_to product_path(@product)
+    if @product.update(product_params)
+      @product.save
+      redirect_to product_path(@product)
+    else
+      render :edit
     end
   end
 
