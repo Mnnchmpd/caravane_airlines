@@ -1,0 +1,31 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514899307441-bee613d8e6e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80;")>
+  <div class="container">
+    <h1> Welcome to Caravane Airlines </h1>
+    <p>Book <strong>YOUR </strong> dream van  <br><em>Rent your van </em><br> </p>
+  </div>
+</div>
+
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <h1 class="my-5 text-center new-title" > What is your next travel ? </h1>
+        <div class="col-md-4">
+        <ul>
+
+          <% @products.each do |product| %>
+            <div class="cards">
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)" >
+            <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
+           <%= link_to product_path(product) do %>
+              <%= "#{product.name}, #{product.description}, #{product.price}" %>
+            </div>
+              </div>
+            <% end %>
+          <% end %>
+        </ul>
+          <div class="my-5 add-button">
+              <%= link_to "Add an offer", new_product_path, class: "btn btn-dark btn-lg" %>
+          </div>
+        </div>
+    </div>
+  </div>
