@@ -13,21 +13,18 @@ class ProductsController < ApplicationController
   end
 
   def create
-   @product = Product.new(product_params)
-    if @product.save
+    @product = Product.new(product_params)
+    @product.save
     redirect_to products_path(@products)
-    else
-      render :new
-    end
   end
 
-    def edit
+  def edit
     @product = Product.find(params[:id])
   end
 
   def update
     @product = Product.find(params[:id])
-    @product.update(params[:product])
+    @product.update(product_params)
     @product.save
     # Will raise ActiveModel::ForbiddenAttributesError
     redirect_to product_path(@product)
