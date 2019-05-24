@@ -16,11 +16,11 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary', '~> 1.9.1'
 group :development do
 gem 'web-console', '>= 3.3.0'
-gem 'dotenv-rails', groups: [:development, :test]
-gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
 end
 
 group :development, :test do
