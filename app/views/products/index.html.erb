@@ -17,8 +17,13 @@
             <div class="cards">
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)" >
             <%= cl_image_tag product.photo, height: 300, width: 400, crop: :fill %>
+            <tr>
            <%= link_to product_path(product) do %>
               <%= "#{product.name}, #{product.description}, #{product.price}" %>
+              <td><%= link_to product_path(product), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fa fa-trash destroy_product"></i></td>
+              </tr>
+              <% end %>
             </div>
               </div>
             <% end %>
