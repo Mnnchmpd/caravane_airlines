@@ -1,20 +1,16 @@
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
-  background-color: transparent;
-  transition: 0.5s background-color ease;
+  background-color: white;
+  font-family: Lobster;
+
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  position: sticky;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 60px;
 }
-
-.nav-item {
-  font-family: 'Lobster', cursive;
-}
-
-
