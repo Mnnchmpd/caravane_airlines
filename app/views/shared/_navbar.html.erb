@@ -1,5 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
+
     <%= image_tag "http://img.over-blog-kiwi.com/1/02/81/26/20161028/ob_110bfd_img-0297.JPG" %>
   <% end %>
 
@@ -7,9 +8,6 @@
   <%= link_to "#", class: "navbar-gif" do %>
     <%= image_tag "http://www.gifgratis.net/gifs_animes/caravane/6.gif" %>
   <% end %>
-
-
-
 </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +19,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <%= link_to "Home Caravan", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
