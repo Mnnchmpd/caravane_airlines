@@ -4,7 +4,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = @product.new(booking_params)
+    @booking = Booking.new(booking_params)
+    @booking = Booking.find(params[:id_product])
+    @booking.product = @product
     @booking.save
     redirect_to product_bookings_path(@booking)
   end
