@@ -1,11 +1,11 @@
 const initUpdateNavbarOnScroll = () => {
-  const navbar = document.querySelector('.navbar');
+  const navbar = document.querySelector('.navbar-lewagon');
   if (navbar) {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= window.innerHeight) {
-        navbar.classList.add('navbar');
+        navbar.classList.add('navbar-collapse');
       } else {
-        navbar.classList.remove('navbar');
+        navbar.classList.remove('navbar-collapse');
       }
     });
   }
