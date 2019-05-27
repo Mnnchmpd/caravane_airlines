@@ -1,13 +1,32 @@
-<%= form_for(@product) do |f| %>
-<thead>
-   <th>Name</th>
-   <th>Description</th>
-   <th>Price</th>
-   <th>Address</th>
-  <%= f.text_field :name, placeholder: 'Name' %>
-  <%= f.text_field :description, placeholder: 'Description' %>
-  <%= f.text_field :price, placeholder: 'Price' %>
-  <%= f.text_field :address, placeholder: 'Address' %>
-  <%= f.submit %>
-   </thead>
-<% end %>
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)); background: url(<%= image_path '3.jpg', size: "500x600" %> )";>
+  <div class="container">
+    <div class="row justify-content-center">
+      <h3> Change your offer </h3>
+        <div class="col-md-8">
+          <h4>
+            <%= simple_form_for(@product) do |f| %>
+              <div class="new-form-control">
+
+
+                  <%= f.input :name, placeholder: 'Name' %>
+                  <%= f.input :description, placeholder: 'Description' %>
+                  <%= f.input :price, placeholder: 'Price' %>
+                  <%= f.input :address, placeholder: 'Address' %>
+                  <%= f.input :photo %>
+                  <%= f.input :photo_cache, as: :hidden %>
+                  <div class="col-md-8">
+                  <%= f.button :submit, class: "btn btn-dark btn-lg" %>
+                  </h4>
+              </div>
+
+            <% end %>
+
+        </div>
+    </div>
+
+    <%= link_to "Back to all Caravan", root_path, class: "back-btn" %>
+  </div>
+</div>
+
+
+
