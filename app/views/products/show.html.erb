@@ -26,7 +26,9 @@
                 <%= link_to product_path(@product), method: :delete, data: { confirm: "Are you sure?" } do %>
                   <i class="fas fa-trash"></i>
                 <% end %>
-                <p> <%= link_to "edit", edit_product_path(@product) %></p>
+                <% if current_user.id == @product.user_id %>
+                  <p> <%= link_to "edit", edit_product_path(@product) %></p>
+                <% end %>
                 </td>
               </tr>
              </tr>
