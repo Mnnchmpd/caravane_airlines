@@ -1,16 +1,19 @@
-
 .navbar-lewagon {
   justify-content: space-between;
   background-color: white;
   font-family: Lobster;
+  position: sticky;
 
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-  position: sticky;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 60px;
+}
+
+.navbar-gif {
+  text-align: center;
 }
