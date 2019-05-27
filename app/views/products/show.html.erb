@@ -1,27 +1,24 @@
 <div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)); background: url(<%= image_path '5.jpeg', crop: :fill %> )";>
   <div class="container">
 
-
-
-
       <div class="col-xs-12">
-        <h1><%= @product.name %></h1>
+
+        <h3><%= @product.name %></h3>
       </div>
-    </div>
-    <div class="row">
+
       <div class="col-sm-12 col-md-6">
-        <h3></h3>
         <table class="table table-bordered">
-          <tbody>
+
             <thead>
-              <th>Name</th>
+              <h4 class="text-show">
               <th>Description</th>
               <th>Price</th>
               <th>Address</th>
             </thead>
+             </h4>
             <%# @products.each do |product| %>
+            <tbody>
             <tr>
-              <td><%=@product.name %></td>
               <td><%=@product.description%></td>
               <td><%=@product.price%></td>
               <td><%=@product.address%></td>
@@ -35,14 +32,11 @@
              </tr>
           </tbody>
         </table>
-         <%= cl_image_tag @product.photo, height: 300, width: 400, crop: :fill %>
-         <p><%= link_to "Back to all Caravan", root_path %></p>
-          <p><%= link_to "Book this Caravan", root_path %></p>
+         <%= cl_image_tag @product.photo, height: 400, width: 500, crop: :fill, class: 'avatar-show' %>
+         <p><%= link_to "Back to all Caravan", root_path, class: "back-btn" %></p>
+          <p><%= link_to "Book this Caravan", root_path, class: "back-btn" %></p>
       </div>
-        <div class="col-sm-6">
-      <h3>Book this Caravan</h3>
-      </div>
-
   </div>
     </div>
 </div>
+
