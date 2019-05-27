@@ -1,0 +1,44 @@
+.container-b {
+  position: relative;
+  width: 50%;
+}
+
+.container h1 {
+  font-family: Lobster;
+  color: #754e15;
+  font-size : 40px;
+}
+
+.container p {
+  font-family: Lobster;
+  font-size: 20px;
+  color: #754e15;
+}
+
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container-b:hover .card-category {
+  opacity: 0.7;
+}
+
+.container-b:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #ffffff;
+  color: #754e15;
+  font-size: 15px;
+  padding: 13px 25px;
+  font-family: Lobster;
+}
