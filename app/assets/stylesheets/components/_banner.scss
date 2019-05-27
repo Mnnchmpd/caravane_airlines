@@ -1,7 +1,11 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 85px;
+  padding: 120px 85px;
+  height: 90vh;
+  color: #eee;
+  padding-top: 40vh;
+  text-align: center;
 }
 
 .banner h1 {
@@ -10,13 +14,15 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 50px;
   font-family: 'Monoton', cursive;
+
 }
 
 .banner p {
   padding: 40px;
-  font-size: 30px;
+  font-size: 50px;
   color: white;
-  opacity: .7;
+  opacity: .9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-family: 'Reenie Beanie', cursive;
 }
+
