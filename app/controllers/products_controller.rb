@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @booking = Booking.new
     authorize @product
   end
 
@@ -28,7 +29,6 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     authorize @product
-    redirect_to product_path(@product)
   end
 
   def update
@@ -36,6 +36,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       @product.save
       redirect_to product_path(@product)
+      authorize @product
     else
       render :edit
     end

@@ -17,29 +17,27 @@
               <th>Price</th>
               <th>Address</th>
             </thead>
-              <tr>
-                <td><%= @product.name %></td>
-                <td><%= @product.description %></td>
-                <td><%= @product.price %>€</td>
-                <td><%= @product.address %></td>
-
+            <%# @products.each do |product| %>
+            <tr>
+              <td><%=@product.name %></td>
+              <td><%=@product.description%></td>
+              <td><%=@product.price%></td>
+              <td><%=@product.address%></td>
+              <td>
+                <%= link_to product_path(@product), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+                <p> <%= link_to "edit", edit_product_path(@product) %></p>
                 </td>
               </tr>
-
+             </tr>
           </tbody>
         </table>
          <%= cl_image_tag @product.photo, height: 300, width: 400, crop: :fill %>
          <p><%= link_to "Back to all Caravan", root_path %></p>
       </div>
-
-
     </div>
      <div class="col-sm-6">
       <h3>Book this Caravan</h3>
-      <%= simple_form_for [@product] do |f| %>
-      <%= f.input :date %>
-      <%= f.submit "Book", class: "btn btn-primary" %>
-      <% end %>
-      <%= link_to "Book", root_path %>
   </div>
 </div>
