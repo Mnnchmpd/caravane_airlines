@@ -1,19 +1,25 @@
-.navbar-lewagon {
+.navbar .navbar-lewagon {
+  position: absolute;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  background-color: white;
+  padding-top: 30px;
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
   font-family: Lobster;
-  position: sticky;
-
 }
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 60px;
+  width: 200px;
 }
 
-.navbar-gif {
-  text-align: center;
-}
