@@ -1,7 +1,9 @@
-<div class="container">
-  <div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1530375323520-248ebdaa967f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1649&q=80;") >
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)); background: url(<%= image_path '5.jpeg', crop: :fill %> )";>
+  <div class="container">
 
-    <div class="row">
+
+
+
       <div class="col-xs-12">
         <h1><%= @product.name %></h1>
       </div>
@@ -39,5 +41,6 @@
     </div>
      <div class="col-sm-6">
       <h3>Book this Caravan</h3>
+
   </div>
 </div>
