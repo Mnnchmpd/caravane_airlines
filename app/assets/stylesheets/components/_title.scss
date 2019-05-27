@@ -1,6 +1,6 @@
 .container-b {
   position: relative;
-  width: 50%;
+  width: 100%;
 }
 
 .container h1 {
@@ -9,12 +9,33 @@
   font-size : 40px;
 }
 
+.container h3 {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  color: #958893;
+  font-size : 60px;
+}
+
+.input {
+  font-family: 'Pacifico', cursive;
+  color: #B9B0B7;
+  font-size : 20px;
+  opacity: 0.5;
+
+}
+
+.container h4 {
+  font-family: 'Pacifico', cursive;
+  color: #6E5C6B;
+  font-size : 20px;
+}
+
+
 .container p {
   font-family: Lobster;
   font-size: 20px;
   color: #754e15;
 }
-
 
 .middle {
   transition: .5s ease;
@@ -37,6 +58,13 @@
 
 .text {
   background-color: #ffffff;
+  color: #754e15;
+  font-size: 15px;
+  padding: 13px 25px;
+  font-family: Lobster;
+}
+
+.text-show {
   color: #754e15;
   font-size: 15px;
   padding: 13px 25px;

@@ -1,7 +1,9 @@
-<div class="container">
-  <div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1530375323520-248ebdaa967f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1649&q=80;") >
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)); background: url(<%= image_path '5.jpeg', crop: :fill %> )";>
+  <div class="container">
 
-    <div class="row">
+
+
+
       <div class="col-xs-12">
         <h1><%= @product.name %></h1>
       </div>
@@ -17,22 +19,30 @@
               <th>Price</th>
               <th>Address</th>
             </thead>
-              <tr>
-                <td><%= @product.name %></td>
-                <td><%= @product.description %></td>
-                <td><%= @product.price %>€</td>
-                <td><%= @product.address %></td>
-
+            <%# @products.each do |product| %>
+            <tr>
+              <td><%=@product.name %></td>
+              <td><%=@product.description%></td>
+              <td><%=@product.price%></td>
+              <td><%=@product.address%></td>
+              <td>
+                <%= link_to product_path(@product), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+                <p> <%= link_to "edit", edit_product_path(@product) %></p>
                 </td>
               </tr>
-
+             </tr>
           </tbody>
         </table>
          <%= cl_image_tag @product.photo, height: 300, width: 400, crop: :fill %>
          <p><%= link_to "Back to all Caravan", root_path %></p>
           <p><%= link_to "Book this Caravan", root_path %></p>
       </div>
+        <div class="col-sm-6">
+      <h3>Book this Caravan</h3>
+      </div>
 
-
+  </div>
     </div>
 </div>

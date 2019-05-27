@@ -1,19 +1,32 @@
-<div class="container" >
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <h1 class="text-center my-5">Add a new Caravan</h1>
-      <p>
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)); background: url(<%= image_path '3.jpeg', size: "500x600" %> )";>
+  <div class="container">
+    <div class="row justify-content-center">
+      <h3> Add a new Caravan</h3>
+        <div class="col-md-8">
 
-        <%= simple_form_for @product do |f| %>
-        <%= f.input :name%>
-        <%= f.input :description%>
-        <%= f.input :address%>
-        <%= f.input :price%>
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
-      </p>
+        <h4>
+
+          <%= simple_form_for [@product ] do |f| %>
+          <div class="new-form-control">
+
+          <%= f.input :name, placeholder: "Roulotte", :input_html => { :class => 'input' } %>
+          <%= f.input :description, placeholder: "Ideal for a trip", :input_html => { :class => 'input' } %>
+          <%= f.input :address, placeholder: "Rue Oberkampf, 75011 Paris", :input_html => { :class => 'input' } %>
+          <%= f.input :price, placeholder: "60€", :input_html => { :class => 'input' } %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <div class="row justify-content-center">
+          <%= f.button :submit, class: "btn btn-dark btn-lg"%>
+          </h4>
+        </div>
+        <% end %>
+        </div>
+
     </div>
+
+    <%= link_to "Back to all Caravan", root_path, class: "back-btn" %>
+
   </div>
 </div>
+
+
