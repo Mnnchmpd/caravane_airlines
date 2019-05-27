@@ -28,6 +28,7 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     authorize @product
+    redirect_to product_path(@product)
   end
 
   def update
@@ -44,6 +45,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     redirect_to products_path
+    authorize @product
   end
 
   def product_params
