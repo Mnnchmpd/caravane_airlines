@@ -1,7 +1,8 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "logo" %>
+    <%= image_tag "lo" %>
   <% end %>
 
 
@@ -16,7 +17,7 @@
   </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div class="my-5 add-button">
+    <div class="add-button">
       <% if policy(Product).create? %>
         <%= link_to "Add an offer", new_product_path, class: "btn btn-dark btn-lg" %>
       <% end %>
