@@ -16,8 +16,7 @@ class ProductPolicy < ApplicationPolicy
   def update?
     user_is_owner_or_admin?
   end
-  # - record: the product passed to the `authorize` method in controller
-  # - user:   the `current_user` signed in with Devise.
+
   def destroy?
     user_is_owner_or_admin?
   end
