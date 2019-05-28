@@ -1,12 +1,19 @@
 .container-b {
   position: relative;
-  width: 100%;
 }
 
 .container h1 {
   font-family: Lobster;
   color: #754e15;
   font-size : 40px;
+}
+
+.container h2 {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  color: #958893;
+  font-size : 40px;
+
 }
 
 .container h3 {
@@ -30,12 +37,6 @@
   font-size : 20px;
 }
 
-
-.container p {
-  font-family: Lobster;
-  font-size: 20px;
-  color: #754e15;
-}
 
 .middle {
   transition: .5s ease;
