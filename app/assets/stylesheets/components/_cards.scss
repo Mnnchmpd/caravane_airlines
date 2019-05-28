@@ -1,7 +1,8 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 40px;
+  margin-bottom: 40px;
 }
 
 // Smallest device
@@ -28,18 +29,97 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 
 
+// CSS du kit wagon ici.
 
 
+
+.card-trip {
+  overflow: hidden;
+  background: none;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  position: relative;
+  transition: .4s ease all;
+  margin-bottom: 10px;
+
+/*   a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+
+  } */
+}
+
+.card-trip:hover {
+    transform: scale(1.05);
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-family: sans-serif;
+  font-size: 16px;
+  max-width: 160px;
+  font-weight: bold;
+  margin: 0;
+  color: #8a5642;
+}
+
+/* Pour le prix : h5 */
+.card-trip h5 {
+  font-family: sans-serif;
+  font-size: 16px;
+  max-width: 160px;
+  font-weight: bold;
+  margin: 0;
+  color: #502d20;
+}
+
+.card-trip p {
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #6b4916;
+  font-weight: normal;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.card-category {
+  height: 250px;
+  width: 250px;
+}
+
+/*
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+} */
