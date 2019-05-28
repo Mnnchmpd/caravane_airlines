@@ -29,12 +29,23 @@
               </div>
 
 
+
+        <%= simple_form_for [@product, @booking] do |f| %>
+          <%= f.input :date %>
+          <%= f.input :people %>
+
+
+          <%= f.submit "Book now", class: "btn btn-primary" %>
+
+        <% end %>
+
+         <p><%= link_to "Back to all Caravan", root_path, class: "back-btn" %></p>
+          <p><%= link_to "Book this Caravan", root_path, class: "back-btn" %></p>
       </div>
     </table>
 
 
-        <p><%= link_to "Back to all Caravan", root_path, class: "back-btn" %></p>
-        <p><%= link_to "Book this Caravan", root_path, class: "back-btn" %></p>
+
 
 
 </div>
