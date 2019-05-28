@@ -6,61 +6,45 @@
             <button name="button" type="submit" class="btn btn-dark">
               <i class="fas fa-search"></i> Search
             </button>
+            <% end %>
           </div>
-          <% end %>
-
         </div>
-
       <div class="container-a">
         <h1> Welcome to Caravane Airlines </h1>
-        <p>Book <strong>YOUR </strong> dream van  <br><em>Rent your van </em><br> </p>
+          <p>Book <strong>YOUR </strong> dream van  <br><em>Rent your van </<em></em>><br> </p>
       </div>
-    </div>
-
+      </div>
         <div class="container">
-
-
           <div class="justify-content-center">
-
-
-    <h1 class="my-5 text-center new-title" > What is your next travel ? </h1>
+          <h1 class="my-5 text-center new-title" > What is your next travel ? </h1>
           <div class="cards">
             <% @products.each do |product| %>
               <div class="card-trip">
-
                 <div class="card-category" role="img">
                   <%= cl_image_tag product.photo, height: 250, width: 250, crop: :fill %>
                   <div class="middle">
                       <div class="text">Rent it</div>
                   </div>
                 </div>
-
-
                 <div class="card-trip-infos">
-
                   <div>
                     <h2><%= "#{product.name}"%></h2>
                     <p><%= "#{product.description}" %></p>
                   </div>
-
                     <h5><%= "#{product.price}€" %> </h5>
-
                 </div>
-
-
                 <%= link_to "", product_path(product) %>
               </div>
             <% end %>
             </div>
-
           </div>
     </div>
   </div>
     <div
-id="map"
-style="width: 50%;
-height: 600px;"
-data-markers="<%= @markers.to_json %>"
-data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+          id="map"
+          style="width: 50%;
+          height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+          ></div>
 
