@@ -16,7 +16,7 @@ Product.destroy_all
   caravantwo.remote_photo_url = "https://www.sud-loire-caravanes.com/wp-content/uploads/2017/11/20171113_103044.jpg"
   caravantwo.save!
 
-  caravanthree = Product.create(user_id: 1, name: 'Caravane Eriba Feeling', description: "Le compagnon de voyage idéal: une caravane compacte, légère et maniable équipée de couchages pour 3 à 5 personnes.", price: 85, address: "121 rue Réaumur, 75002 Paris")
+  caravanthree = Product.create(user_id: 1, name: 'Caravane Eriba Feeling', description: "Une caravane légère et maniable équipée de couchages pour 3 à 5 personnes.", price: 85, address: "121 rue Réaumur, 75002 Paris")
   caravanthree.remote_photo_url = "https://www.eriba.com/fr/assets/image-cache/images/modell-2019/caravan/eriba-feeling/ERIBA_Feeling_2019_Modelluebersicht.261d7108.jpg"
   caravanthree.save!
 
@@ -28,7 +28,7 @@ Product.destroy_all
   caravanfive.remote_photo_url = "http://bubblemania.fr/wp-content/uploads/CARAVANE-FUSEE-BUBBLE-RED0033.jpg"
   caravanfive.save!
 
-  caravansix = Product.create(user_id: 1, name: 'Camping car Mercedes Capucine', description: "Véhicule unique. Camping-car Mercedes avec caravane installée sur chassis, plus une autre caravane en capucine", price: 130, address: "Rue Oberkampf, 75011 Paris")
+  caravansix = Product.create(user_id: 1, name: 'Camping car Mercedes Capucine', description: "Véhicule unique. Camping-car Mercedes avec caravane installées sur chassis et en capucine", price: 130, address: "Rue Oberkampf, 75011 Paris")
   caravansix.remote_photo_url = "http://forum-camping-car.fr/article/image/photo0008533_L.jpg"
   caravansix.save!
 
@@ -45,7 +45,7 @@ Product.destroy_all
   caravannine.save!
 
   caravanten = Product.create(user_id: 1, name: 'Peugeot - Vacances familiales', description: "Ce camping-car familial vous permettra d'accueillir votre famille pour des vacances bien méritées !", price: 115, address: "222 rue de Crimée, 75019 Paris")
-  caravanten.remote_photo_url = "https://bridoz.com/wp-content/uploads/2016/04/Cette_caravane_de_1953_est-f.jpg"
+  caravanten.remote_photo_url = "https://www.lebosquet.com/wp-content/uploads/2018/02/camping-car.jpg"
   caravanten.save!
 
 
