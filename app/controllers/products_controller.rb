@@ -1,7 +1,14 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
     skip_policy_scope
+
+    @products = Product.where.not(latitude: nil, longitude: nil)
+    @markers = @products.map do |product|
+      {
+        lat: product.latitude,
+        lng: product.longitude
+      }
+    end
   end
 
   def show

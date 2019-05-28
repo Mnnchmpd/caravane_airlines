@@ -19,6 +19,7 @@
 
         <div class="container">
 
+
           <div class="justify-content-center">
 
 
@@ -50,16 +51,16 @@
                 <%= link_to "", product_path(product) %>
               </div>
             <% end %>
-
             </div>
 
-            <h1 class="my-5 text-center new-title" > What is your next travel ? </h1>
-
           </div>
-
-        </div>
-
     </div>
   </div>
-
+<div
+  id="map"
+  style="width: 50%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 
