@@ -1,53 +1,66 @@
-<div> <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-    <button name="button" type="submit" class="btn btn-dark">
-      <i class="fas fa-search"></i> Search
-    </button>
-  </div>
-<% end %>
 
-</div>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514899307441-bee613d8e6e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80;")>
+        <div> <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+          <div class="search-form-control form-group">
+            <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+            <button name="button" type="submit" class="btn btn-dark">
+              <i class="fas fa-search"></i> Search
+            </button>
+          </div>
+          <% end %>
+
+        </div>
+
+      <div class="container-a">
+        <h1> Welcome to Caravane Airlines </h1>
+        <p>Book <strong>YOUR </strong> dream van  <br><em>Rent your van </em><br> </p>
+      </div>
+    </div>
+
+        <div class="container">
 
 
+          <div class="justify-content-center">
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514899307441-bee613d8e6e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80;")>
-  <div class="container-a">
-    <h1> Welcome to Caravane Airlines </h1>
-    <p>Book <strong>YOUR </strong> dream van  <br><em>Rent your van </em><br> </p>
-  </div>
-</div>
-
-<div class="container">
-
-  <div class="justify-content-center">
 
     <h1 class="my-5 text-center new-title" > What is your next travel ? </h1>
           <div class="cards">
             <% @products.each do |product| %>
-            <div class="container-b">
+              <div class="card-trip">
 
-                  <div class="card-category" role="img" style="width: 100%; height: 100%, linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-                    <%= cl_image_tag product.photo, height: 300, width: 350, crop: :fill %>
-                    <div class="middle">
-                        <div class="text">Rent it</div>
-                    </div>
-
-
-                    <div class="card-title"><%= link_to product_path(product) do %>
-                    <p><%= "#{product.name}"%><br>
-                    <%= "#{product.description}" %> <br>
-                    <%= "#{product.price}€" %> </br></p> </div>
-
-                    <% end %>
-                    </div>
+                <div class="card-category" role="img">
+                  <%= cl_image_tag product.photo, height: 250, width: 250, crop: :fill %>
+                  <div class="middle">
+                      <div class="text">Rent it</div>
                   </div>
-            <% end %>
+                </div>
 
+
+                <div class="card-trip-infos">
+
+                  <div>
+                    <h2><%= "#{product.name}"%></h2>
+                    <p><%= "#{product.description}" %></p>
+                  </div>
+
+                    <h5><%= "#{product.price}€" %> </h5>
+
+                </div>
+
+
+                <%= link_to "", product_path(product) %>
+              </div>
+            <% end %>
             </div>
 
           </div>
-
     </div>
   </div>
+    <div
+id="map"
+style="width: 50%;
+height: 600px;"
+data-markers="<%= @markers.to_json %>"
+data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'contacts/index'
   devise_for :users
   root to: 'products#index'
   get "dashboard", to: "pages#dashboard"
