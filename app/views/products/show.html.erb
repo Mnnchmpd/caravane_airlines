@@ -1,37 +1,42 @@
-  <div class="container">
+<div class="container">
+  <div class="title-show">
+    <h3><%= @product.name %></h3>
+  </div>
+  <hr>
 
-      <div class="col-xs-12">
-
-        <h3><%= @product.name %></h3>
-      </div>
-
-      <div class="col-sm-12 col-md-6">
-        <table class="table table-bordered">
+    <table class="table table-bordered">
+      <div class="d-flex justify-content-between">
 
 
               <div class="text-show">
               <h4> Description : <%=@product.description%></h4>
               <h4>Price <%=@product.price%></h4>
               <h4>Address <%=@product.address%></h4>
-              </div>
-
               <%= cl_image_tag @product.photo, height: 400, width: 500, crop: :fill, class: 'avatar-show' %>
+                <%= link_to product_path(@product), method: :delete, data: { confirm: "Are you sure?" }, class: 'delete-btn' do %>
 
 
-            <%# @products.each do |product| %>
-             <%= link_to product_path(@product), method: :delete, data: { confirm: "Are you sure?" } do %>
                   <i class="fas fa-trash"></i>
                 <% end %>
                 <% if current_user.id == @product.user_id %>
                   <p> <%= link_to "edit", edit_product_path(@product) %></p>
                 <% end %>
-          </tbody>
-        </table>
+              </div>
 
-         <p><%= link_to "Back to all Caravan", root_path, class: "back-btn" %></p>
-          <p><%= link_to "Book this Caravan", root_path, class: "back-btn" %></p>
+
+              <%= render 'pages/calendar' %>
+
+              </div>
+
+
       </div>
-  </div>
-    </div>
+    </table>
+
+
+        <p><%= link_to "Back to all Caravan", root_path, class: "back-btn" %></p>
+        <p><%= link_to "Book this Caravan", root_path, class: "back-btn" %></p>
+
+
+</div>
 
 
