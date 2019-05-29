@@ -10,20 +10,21 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="navbar-gif-one">
-    <%= link_to "#", class: "navbar-gif" do %>
-        <%= image_tag "http://www.gifgratis.net/gifs_animes/caravane/6.gif" %>
-    <% end %>
-  </div>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div class="add-button">
-      <% if policy(Product).create? %>
-        <%= link_to "Add an offer", new_product_path, class: "btn btn-dark btn-lg" %>
-      <% end %>
-    </div>
+
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+          <div class="navbar-gif-one">
+            <%= link_to "#", class: "navbar-gif" do %>
+                <%= image_tag "http://www.gifgratis.net/gifs_animes/caravane/6.gif" %>
+            <% end %>
+          </div>
+
+         <div class="add-button">
+            <% if policy(Product).create? %>
+              <%= link_to "Add an offer", new_product_path, class: "btn btn-dark btn-lg" %>
+            <% end %>
+          </div>
         <li class="nav-item active">
           <%= link_to "Home Caravan", "#", class: "nav-link" %>
         </li>
@@ -43,6 +44,9 @@
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
         </li>
 
       <% end %>

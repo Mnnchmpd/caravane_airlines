@@ -27,10 +27,33 @@
 }
 
 .home-banner {
+  background-image: url('4.jpg');
+  background-size: cover;
+  height: 100vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+.sign-up {
   background-image: url('5.jpg');
   background-size: cover;
   height: 100vh;
   color: #eee;
   text-align: center;
   padding-top: 40vh;
+}
+
+.sign-up h2 {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  color: white;
+  font-size : 40px;
+}
+
+.sign-up h4 {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  color: white;
+  font-size : 20px;
 }
