@@ -1,6 +1,6 @@
 .dashboard {
 
-  margin: 50px 100px 250px 100px;
+  margin: 50px 50px 50px 50px;
 
   h1 {
     margin: 0px 0 50px 0;
@@ -11,28 +11,11 @@
     color: black;
     font-weight: bold;
     position: relative;
-
-    &:after {
-      position: absolute;
-      content: "";
-      height: 45px;
-      width: 45px;
-      right: 10px;
-      top: 2px;
-      background: url(asset-path("arrow-down.svg"));
-      background-size: 130%;
-      background-repeat: no-repeat;
-    }
-  }
-  a {
-    margin-left: 0;
-    margin-top: 0;
   }
 }
 
 .head {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background: #dee0d9;
   padding: 11px;
@@ -44,9 +27,9 @@
   }
 }
 
-.rows-dashboard {
+.d-flex{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background: white;
   padding: 11px;
@@ -57,48 +40,45 @@
   }
 }
 
-.row-middle {
-  width: 150px;
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
 }
 
-.headers-middle {
+.card-product img {
+  height: 100%;
   width: 120px;
+  object-fit: cover;
 }
 
-#info {
-  font-style: italic;
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
 }
 
-.bookings-title {
-  background: black;
-  border-radius: 10px;
-  padding: 15px;
-  &:hover {
-    opacity: 0.9;
-  }
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
 }
 
-.dashboard-section {
-  height: 500px;
-  transition: all 450ms ease-out;
-  overflow: scroll;
+.card-product .card-product-infos {
+  padding: 16px;
 }
 
-.hide {
-  // display: none;
-  // overflow: hidden;
-  height: 0px;
-  // transition: 350ms
-  transition: all 450ms ease-out;
-  // opacity: 0;
-  height: 0 !important;
+.status-buttons {
+  flex-grow: 1;
+  padding-right: 32px;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.cards-title {
-  background: black;
-  border-radius: 10px;
-  padding: 15px;
-  &:hover {
-    opacity: 0.9;
-  }
-}
+
