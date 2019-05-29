@@ -30,8 +30,8 @@
 
 
 
-        <%= simple_form_for [@product, @booking] do |f| %>
-          <%= f.input :date %>
+          <%= simple_form_for [@product, @booking] do |f| %>
+            <%= f.input :date %>
           <%= f.input :people %>
 
 
@@ -40,7 +40,7 @@
         <% end %>
 
          <p><%= link_to "Back to all Caravan", root_path, class: "back-btn" %></p>
-          <p><%= link_to "Book this Caravan", root_path, class: "back-btn" %></p>
+          <p><%= link_to "Book this Caravan", booking_path, class: "back-btn" %></p>
       </div>
     </table>
 
