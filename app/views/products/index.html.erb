@@ -15,36 +15,33 @@
       <% end %>
     </div>
 </div>
-
+  <i><h1 class="my-5 text-center new-title" > What is your next travel ? </h1></i>
   <div class="container">
 
-      <h1 class="my-5 text-center new-title" > What is your next travel ? </h1>
-      <div class="d-flex">
+
+      <div class="d-flex" style="margin-top: 0px">
         <div class="cards">
                 <% @products.each do |product| %>
                   <div class="card-trip">
 
                     <div class="card-category" role="img">
                       <%= cl_image_tag product.photo, height: 250, width: 250, crop: :fill %>
-                        <div class="middle">
-                          <div class="text">Rent it</div>
-                          </div>
-                        </div>
+                    </div>
 
 
-                        <div class="card-trip-infos">
+                    <div class="card-trip-infos">
 
-                          <div>
-                            <h2><%= "#{product.name}"%></h2>
-                            <p><%= "#{product.description}" %></p>
-                          </div>
+                      <div>
+                        <h2><%= "#{product.name}"%></h2>
+                        <p><%= "#{product.description}" %></p>
+                      </div>
 
-                            <h5><%= "#{product.price}€" %> </h5>
+                        <h5 class="btn btn-secondary"><%= "#{product.price}€" %> </h5>
 
-                        </div>
+                    </div>
 
 
-                        <%= link_to "", product_path(product) %>
+                    <%= link_to "", product_path(product) %>
                     </div>
                     <% end %>
                   </div>

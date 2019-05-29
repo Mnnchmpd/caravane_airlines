@@ -8,5 +8,8 @@ Rails.application.routes.draw do
       resources :bookings, only: [:new, :create, :show, :index]
     end
     #resources :products, only: [:destroy]
-    resources :bookings, only: [:destroy, :edit, :update]
+    resources :bookings, only: [:destroy, :edit, :update] do
+      get 'accept', to: 'bookings#accept'
+      get 'decline', to: 'bookings#decline'
+    end
 end

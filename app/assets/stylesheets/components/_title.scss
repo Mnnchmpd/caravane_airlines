@@ -1,29 +1,45 @@
+.home-banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 50px;
+  font-family: 'Monoton', cursive;
+}
+
+.home-banner p {
+  font-family: 'Pacifico', cursive;
+  color: white;
+  font-size : 40px;
+}
+
 .container-b {
   position: relative;
 }
 
 .container h1 {
-  font-family: Lobster;
-  color: #754e15;
+  font-family: 'Roboto', sans-serif;
+  color: #0A1F2E;
   font-size : 40px;
+  font-weight: bold;
 }
 
 .container h2 {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
-  color: #958893;
-  font-size : 40px;
+
+  color: #912F56;
+  font-size : 14px;
 }
 
 .container h3 {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   color: #958893;
   font-size : 60px;
 }
 
 .input {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Roboto', sans-serif;
   color: #B9B0B7;
   font-size : 20px;
   opacity: 0.5;
@@ -31,7 +47,7 @@
 }
 
 .container h4 {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Roboto', sans-serif;
   color: #6E5C6B;
   font-size : 20px;
 }
@@ -61,12 +77,12 @@
   color: #754e15;
   font-size: 15px;
   padding: 13px 25px;
-  font-family: Lobster;
+  font-family: 'Roboto', sans-serif;
 }
 
 .text-show {
   color: #754e15;
   font-size: 15px;
   padding: 13px 25px;
-  font-family: Lobster;
+  font-family: 'Roboto', sans-serif;
 }

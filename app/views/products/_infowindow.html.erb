@@ -1,0 +1,6 @@
+<%= link_to product_path(product) do  %>
+ <h6>  <%= product.name %> </h6>
+ <h6>  <%= product.price %> € </h6>
+ <h5>  <%= cl_image_tag product.photo, height: 100, width: 100, crop: :fill  %> </h5>
+
+<% end %>

@@ -36,6 +36,22 @@ class BookingsController < ApplicationController
     end
   end
 
+  def accept
+    skip_authorization
+    @booking = Booking.find(params[:booking_id])
+    @booking.status = 'accept'
+    @booking.save
+    redirect_to dashboard_path
+  end
+
+  def decline
+    skip_authorization
+    @booking = Booking.find(params[:booking_id])
+    @booking.status = 'decline'
+    @booking.save
+    redirect_to dashboard_path
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     authorize @booking
@@ -44,6 +60,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :people, :user_id)
+    params.require(:booking).permit(:start_date, :end_date, :people)
   end
 end
