@@ -37,15 +37,19 @@ class BookingsController < ApplicationController
   end
 
   def accept
-    @booking = Booking.find(params[:id])
-    @booking.accept = true
+    skip_authorization
+    @booking = Booking.find(params[:booking_id])
+    @booking.status = 'accept'
     @booking.save
+    redirect_to dashboard_path
   end
 
   def decline
-    @booking = Booking.find(params[:id])
-    @booking.decline = true
+    skip_authorization
+    @booking = Booking.find(params[:booking_id])
+    @booking.status = 'decline'
     @booking.save
+    redirect_to dashboard_path
   end
 
   def destroy

@@ -5,8 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+puts "destroying products"
 Product.destroy_all
+
+puts "creating products"
 
   caravanone = Product.create(user_id: 1, name: 'Roulotte typique en bois', description: "Roulotte entièrement équipée idéale pour un couple", price: 50, address: "30 Rue Oberkampf, 75011 Paris")
   caravanone.remote_photo_url = "https://assets.catawiki.nl/assets/2016/2/15/c/9/d/c9daf240-d3f4-11e5-8ae8-d7bf860fd2ae.jpg"

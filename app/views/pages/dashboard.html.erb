@@ -1,7 +1,28 @@
 <div class="dashboard">
   <h1>Welcome to your dashboard ! </h1>
-  <div class="head">
-
+  <div>
+    <h2>My Bookings requests</h2>
+    <% current_user.booking_requests.each do |request| %>
+      <div>
+        <%= request.product.name %>
+      </div>
+      <!-- dates de la requete -->
+      <div>
+        <p>Starts at <%= request.start_date.strftime('%e, %B, %Y') %></p>
+        <p>Ends at <%= request.end_date.strftime('%e, %B, %Y') %></p>
+      </div>
+      <!-- statut des requetes -->
+      <div>
+        <%= request.status %>
+        <% if request.status == 'pending' %>
+          <%= link_to 'accept', booking_accept_path(request) %>
+          <%= link_to 'decline', booking_decline_path(request) %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  
+  <div class="my_caravans">
     <h3>Your Caravans:</h3>
 
     <div class="rows-dashboard">
@@ -9,9 +30,9 @@
             <%= cl_image_tag product.photo, height: 100, width: 150, crop: :fill %>
             <h3 class="card-title">
               <%= link_to product_path(product) do %>
-                <%= "#{product.name}"%>
+                <%= product.name%>
                 <%= "#{product.description}" %>
-                <%= "#{product.price}€" %>
+               <%= "#{product.price}€ "%>
               <% end %>
             </h3>
           </div>
@@ -20,7 +41,10 @@
     </div>
   </div>
 
-  <div class="head">
+
+
+  <div class="my_bookings">
+
 
     <h3>Your Bookings:</h3>
 
@@ -38,6 +62,9 @@
               <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
               <i class="fas fa-trash"></i>
               <% end %>
+
+
+
               <!-- link_to "edit", edit_product_booking_path(booking) -->
 
         </div>
