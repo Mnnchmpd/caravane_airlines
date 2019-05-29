@@ -6,9 +6,10 @@
        <div class="col-md-8">
 
 
-          <%= simple_form_for :search, method: "get" do |f| %>
-            <%= f.input :debut, as: :string, placeholder: 'debut', required: false, input_html: {class: "datepicker"} %>
-            <%= f.input :fin, as: :string, required: false, placeholder: 'fin', input_html: {class: "datepicker"} %>
+          <%= simple_form_for [@product, @booking] do |f| %>
+            <%= f.input :start_date, as: :string, placeholder: 'debut', required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :end_date, as: :string, required: false, placeholder: 'fin', input_html: {class: "datepicker"} %>
+            <%= f.input :people %>
             <div class="col-md-8">
             <%= f.button :submit, "Book", class: "btn btn-dark btn-lg" %>
           <% end %>
