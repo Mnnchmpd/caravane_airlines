@@ -30,7 +30,7 @@ puts "creating products"
   caravanfive.remote_photo_url = "http://bubblemania.fr/wp-content/uploads/CARAVANE-FUSEE-BUBBLE-RED0033.jpg"
   caravanfive.save!
 
-  caravansix = Product.create(user_id: 1, name: 'Camping car Mercedes Capucine', description: "Véhicule unique. Camping-car Mercedes avec caravane installées sur chassis et en capucine", price: 130, address: "Rue Oberkampf, 75011 Paris")
+  caravansix = Product.create(user_id: 1, name: 'Camping car Mercedes Capucine', description: "Véhicule unique. Camping-car Mercedes avec caravanes installées sur chassis et en capucine", price: 130, address: "Rue Oberkampf, 75011 Paris")
   caravansix.remote_photo_url = "http://forum-camping-car.fr/article/image/photo0008533_L.jpg"
   caravansix.save!
 
