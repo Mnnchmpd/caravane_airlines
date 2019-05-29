@@ -77,12 +77,13 @@
 }
 
 .card-trip h2 {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   max-width: 160px;
   font-weight: bold;
   margin: 0;
   color: #8a5642;
+  text-align: center;
 }
 
 /* Pour le prix : h5 */
@@ -92,16 +93,17 @@
   max-width: 160px;
   font-weight: bold;
   margin: 0;
-  color: #502d20;
+  color: #0A1F2E;
 }
 
 .card-trip p {
   font-family: sans-serif;
-  font-size: 14px;
-  color: #6b4916;
+  font-size: 12px;
+  color: #69737A;
   font-weight: normal;
   opacity: .7;
   margin: 0;
+  text-align: center;
 }
 
 
