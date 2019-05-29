@@ -36,6 +36,18 @@ class BookingsController < ApplicationController
     end
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.accept = true
+    @booking.save
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.decline = true
+    @booking.save
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     authorize @booking
@@ -44,6 +56,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :people, :user_id)
+    params.require(:booking).permit(:start_date, :end_date, :people)
   end
 end

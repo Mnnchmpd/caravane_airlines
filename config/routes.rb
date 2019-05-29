@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     end
     #resources :products, only: [:destroy]
     resources :bookings, only: [:destroy, :edit, :update]
+      get 'accept', to: 'bookings#accept'
+      get 'decline', to: 'bookings#decline'
 end
